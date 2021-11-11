@@ -4,11 +4,26 @@
 }
 
 .thumbnail {
-  padding-bottom: 30px;
+  padding: 15px 15px 30px 15px;
   margin-bottom: 40px;
+  background-color: #F5F5DC;
+  min-height: 340px;
+  border: transparent;
+  text-align: center;
 }
 
 .img {
   height: 250px;
   width: 400px;
 }
+
+.product-description {
+  font-family: 'Yaldevi', sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+.add-chart {
+
+}
+

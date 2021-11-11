@@ -1,0 +1,36 @@
+h2 {
+  padding-bottom: 50px;
+  font-family: 'Yaldevi', sans-serif;
+  font-weight: bold;
+}
+
+.img {
+  height: 250px;
+  width: 320px;
+  margin: 30px 20px 30px 20px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: center;
+}
+#sum-price {
+  font-family: arial, sans-serif;
+  font-weight: bold;
+}
+
+.jumbotron {
+  background-color: #F5F5DC;
+}
+
+.quantityButton {
+background-color: #556B2F;
+  color: #F5F5DC;
+}

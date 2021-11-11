@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Image Gallary</title>
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="app.component.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yaldevi&display=swap" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <a class="navbar-brand" routerLink="/homepage" routerLinkActive="active"><i class="fas fa-seedling"></i> PlantMilk</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-nav-demo">
       <ul class="nav navbar-nav navbar-right">
-        <li><a id="chart-button" routerLink="/cartpage" routerLinkActive="active">Warenkorb   <i class="fas fa-shopping-cart"></i></a></li>
+        <li><a id="chart-button" routerLink="/cartpage" routerLinkActive="active">Warenkorb   <i class="fas fa-shopping-cart">   {{itemNumber}}</i></a></li>
       </ul>
     </div>
-  </div>
 </nav>
 <router-outlet></router-outlet>
 <script src="http://code.jquery.com/jquery-2.2.4.js"></script>

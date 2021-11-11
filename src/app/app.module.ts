@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './Components/home/home.component';
 import { CartSideComponent } from './Components/cart-side/cart-side.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

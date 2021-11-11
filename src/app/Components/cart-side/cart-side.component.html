@@ -1,3 +1,32 @@
-<div class="container">
-<p>cart-side works!</p>
+<div class="container" *ngFor="let product of products; let i = index">
+  <h2>Warenkorb</h2>
+  <div class="jumbotron">
+    <table>
+      <tr>
+      <th>Artikel</th>
+      <th>Einzelpreis</th>
+      </tr>
+      <tr>
+        <td>
+          <div><img class="img" [src]="product.image"><p class="chart-products">{{product.title}}</p></div>
+        <select id="quantityButton">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+        </select>
+        </td>
+        <td>{{product.cost}}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td id="sum-price"> Gesamtpreis: 6,00€</td>
+      </tr>
+    </table>
+  </div>
 </div>
