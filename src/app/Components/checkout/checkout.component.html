@@ -1,0 +1,78 @@
+<div class="container">
+  <h2 style="font-weight: bold">Kasse</h2>
+  <div class="example-container">
+    <form [formGroup]="options">
+      <h3 style="font-weight: bold">Versand</h3>
+      <mat-form-field appearance="fill"
+                      [hideRequiredMarker]="hideRequiredControl.value"
+                      [floatLabel]="floatLabelControl.value">
+        <input matInput placeholder="Email" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill"
+                      [hideRequiredMarker]="hideRequiredControl.value"
+                      [floatLabel]="floatLabelControl.value">
+        <mat-select required placeholder="Anrede">
+          <mat-option value="germany">Herr</mat-option>
+          <mat-option value="austria">Frau</mat-option>
+          <mat-option value="switzerland">Divers</mat-option>
+        </mat-select>
+      </mat-form-field>
+        <mat-form-field appearance="fill"
+                        [hideRequiredMarker]="hideRequiredControl.value"
+                        [floatLabel]="floatLabelControl.value">
+          <input matInput placeholder="Vorname" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill"
+                        [hideRequiredMarker]="hideRequiredControl.value"
+                        [floatLabel]="floatLabelControl.value">
+          <input matInput placeholder="Nachname" required>
+        </mat-form-field>
+
+      <mat-form-field appearance="fill"
+                      [hideRequiredMarker]="hideRequiredControl.value"
+                      [floatLabel]="floatLabelControl.value">
+        <mat-select required placeholder="Land">
+          <mat-option value="germany">Deutschland</mat-option>
+          <mat-option value="austria">Östereich</mat-option>
+          <mat-option value="switzerland">Schweiz</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill"
+                      [hideRequiredMarker]="hideRequiredControl.value"
+                      [floatLabel]="floatLabelControl.value">
+        <input matInput placeholder="Stadt" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill"
+                      [hideRequiredMarker]="hideRequiredControl.value"
+                      [floatLabel]="floatLabelControl.value">
+        <input matInput placeholder="PLZ" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill"
+                      [hideRequiredMarker]="hideRequiredControl.value"
+                      [floatLabel]="floatLabelControl.value">
+        <input matInput placeholder="Straße" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill"
+                      [hideRequiredMarker]="hideRequiredControl.value"
+                      [floatLabel]="floatLabelControl.value">
+        <input matInput placeholder="Hausnummer" required>
+      </mat-form-field>
+      <label>Versand: </label>
+      <mat-radio-group>
+        <mat-radio-button value="dhl">DHL</mat-radio-button>
+        <mat-radio-button value="dpd">DPD</mat-radio-button>
+        <mat-radio-button value="ups">UPS</mat-radio-button>
+      </mat-radio-group>
+      <h3 style="font-weight: bold">Bezahlung</h3>
+      <div>
+        <label>Bezahlmethode: </label>
+        <mat-radio-group>
+          <mat-radio-button value="paypal">Paypal</mat-radio-button>
+          <mat-radio-button value="visa">Visa</mat-radio-button>
+          <mat-radio-button value="klarna">Klarna</mat-radio-button>
+        </mat-radio-group>
+        <mat-checkbox [formControl]="hideRequiredControl">Nutzungsbedingungen</mat-checkbox>
+      </div>
+    </form>
+  </div>
+</div>

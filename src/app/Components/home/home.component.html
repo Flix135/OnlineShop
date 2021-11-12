@@ -11,8 +11,8 @@
     <div class="col-lg-4 col-sm-6" *ngFor="let product of products; let i = index">
       <div class="thumbnail">
         <img class="img" [src]="product.imgpath">
-        <h3>{{product.title}}</h3>
-        <p class="product-description">{{product.price + "€"}}</p>
+        <h2 id="productTitle">{{product.title}}</h2>
+        <p class="product-description">{{product.price + "€ pro Liter"}}</p>
         <button type="button" class="btn btn-success add-chart">In den Warenkorb   <i class="fas fa-cart-plus"></i></button>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from '../../interfaces/product.interface';
-import PRODUCTS from '../../dummys/home.dummy';
+import {ProductService} from '../../services/product.service';
 
 @Component({
   selector: 'app-cart-side',
@@ -8,10 +7,13 @@ import PRODUCTS from '../../dummys/home.dummy';
   styleUrls: ['./cart-side.component.css']
 })
 export class CartSideComponent implements OnInit {
-  // products: Product[] = PRODUCTS;
-  constructor() { }
+  products: any[];
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.productService.getProducts().subscribe((res) => {
+      this.products = res.Products;
+    });
   }
 
 }
