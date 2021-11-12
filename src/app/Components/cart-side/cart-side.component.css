@@ -34,3 +34,7 @@ td, th {
 background-color: #556B2F;
   color: #F5F5DC;
 }
+
+#checkoutButton {
+  float: right;
+}

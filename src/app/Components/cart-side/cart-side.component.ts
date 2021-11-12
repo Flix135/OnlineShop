@@ -8,7 +8,7 @@ import PRODUCTS from '../../dummys/home.dummy';
   styleUrls: ['./cart-side.component.css']
 })
 export class CartSideComponent implements OnInit {
-  products: Product[] = PRODUCTS;
+  // products: Product[] = PRODUCTS;
   constructor() { }
 
   ngOnInit(): void {

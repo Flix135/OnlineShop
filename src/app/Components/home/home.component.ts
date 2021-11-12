@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from '../../interfaces/product.interface';
-import PRODUCTS from '../../dummys/home.dummy';
+import {ProductService} from '../../services/product.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,16 +8,13 @@ import PRODUCTS from '../../dummys/home.dummy';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  products: Product[] = PRODUCTS;
-  productCount = 0;
+  products: any[];
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
-  ngOnInit(): void {
-  }
-
-  chartCount() {
-    this.productCount++;
-  }
+  async ngOnInit() {
+  this.productService.getProducts().subscribe((res) => {
+    this.products = res.Products;
+});
 }
-
+}
