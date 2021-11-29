@@ -1,4 +1,4 @@
-<div class="container" *ngFor="let product of products; let i = index">
+<div class="container">
   <h2>Warenkorb</h2>
   <div class="jumbotron">
     <table>
@@ -6,26 +6,15 @@
       <th>Artikel</th>
       <th>Einzelpreis</th>
       </tr>
-      <tr>
+      <tr *ngFor="let product of products; let i = index">
         <td>
-          <div><img class="img" [src]="product.imgpath"><p class="chart-products">{{product.title}}</p></div>
-        <select id="quantityButton">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-        </select>
+          <div><img class="img" [src]="'http://localhost:3000/' + product.imgpath"><p class="chart-products">{{product.title}}</p></div>
         </td>
         <td>{{product.price}}</td>
       </tr>
       <tr>
         <td></td>
-        <td id="sum-price"> Gesamtpreis: 6,00€</td>
+        <td id="sum-price">{{totalPrice}}</td>
       </tr>
     </table>
   </div>

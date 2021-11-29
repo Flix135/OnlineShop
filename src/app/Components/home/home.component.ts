@@ -16,5 +16,21 @@ export class HomeComponent implements OnInit {
   this.productService.getProducts().subscribe((res) => {
     this.products = res.Products;
 });
+  if (!this.productService.getCookie('userid')) {
+  this.productService.getUserId().subscribe((res) => {
+    this.productService.setCookie('userid', res.userid, 30);
+    });
+  }
+  this.productService.getCart().subscribe((res) => {
+    console.log(res);
+    });
+}
+
+addToCart(product): any {
+    const userId = this.productService.getCookie('userid');
+    const data = {productid: product._id, userid: userId};
+    this.productService.postToCart(data).subscribe((res) => {
+      location.reload();
+  });
 }
 }
