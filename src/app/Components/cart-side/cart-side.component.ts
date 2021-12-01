@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductService} from '../../services/product.service';
-import {element} from "protractor";
+import {SharedService} from '../../services/shared.service';
 
 @Component({
   selector: 'app-cart-side',
@@ -9,16 +8,17 @@ import {element} from "protractor";
 })
 export class CartSideComponent implements OnInit {
   products: any[];
-  totalPrice = 0;
-  constructor(private productService: ProductService) { }
+  totalPrice: string;
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
-    this.productService.getCart().subscribe((res) => {
+    this.sharedService.getCart().subscribe((res) => {
       this.products = res;
+      let price = 0;
       res.forEach(product => {
-        this.totalPrice += parseFloat(product.price);
+        price += Number(parseFloat(product.price).toFixed(2));
       });
+      this.totalPrice = price.toFixed(2);
     });
   }
-
 }

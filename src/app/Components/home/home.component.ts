@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductService} from '../../services/product.service';
-import {Observable} from 'rxjs';
+import {SharedService} from '../../services/shared.service';
 
 @Component({
   selector: 'app-home',
@@ -10,26 +9,24 @@ import {Observable} from 'rxjs';
 export class HomeComponent implements OnInit {
   products: any[];
 
-  constructor(private productService: ProductService) { }
+  constructor(private sharedService: SharedService) { }
 
   async ngOnInit() {
-  this.productService.getProducts().subscribe((res) => {
+  this.sharedService.getProducts().subscribe((res) => {
     this.products = res.Products;
 });
-  if (!this.productService.getCookie('userid')) {
-  this.productService.getUserId().subscribe((res) => {
-    this.productService.setCookie('userid', res.userid, 30);
+  if (!this.sharedService.getCookie('userid')) {
+  this.sharedService.getUserId().subscribe((res) => {
+    this.sharedService.setCookie('userid', res.userid, 30);
     });
   }
-  this.productService.getCart().subscribe((res) => {
-    console.log(res);
-    });
+  this.sharedService.getCart().subscribe((res) => {});
 }
 
 addToCart(product): any {
-    const userId = this.productService.getCookie('userid');
+    const userId = this.sharedService.getCookie('userid');
     const data = {productid: product._id, userid: userId};
-    this.productService.postToCart(data).subscribe((res) => {
+    this.sharedService.postToCart(data).subscribe((res) => {
       location.reload();
   });
 }

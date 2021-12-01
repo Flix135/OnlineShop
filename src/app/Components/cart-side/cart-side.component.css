@@ -2,12 +2,18 @@ h2 {
   padding-bottom: 50px;
   font-family: 'Yaldevi', sans-serif;
   font-weight: bold;
+  text-align: left;
+}
+
+.container {
+  text-align: center;
 }
 
 .img {
-  height: 250px;
-  width: 320px;
+  height: 150px;
+  width: 220px;
   margin: 30px 20px 30px 20px;
+  float: left;
 }
 
 table {
@@ -28,6 +34,8 @@ td, th {
 
 .jumbotron {
   background-color: #F5F5DC;
+  width: fit-content;
+  display: inline-block;
 }
 
 .quantityButton {
@@ -37,4 +45,13 @@ background-color: #556B2F;
 
 #checkoutButton {
   float: right;
+  margin-top: 40px;
+}
+
+.chart-products {
+  font-family: 'Yaldevi', sans-serif;
+  font-size: large;
+  width: 120px;
+  float: right;
+  margin-top: 80px;
 }

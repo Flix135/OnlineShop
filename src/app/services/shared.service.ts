@@ -8,7 +8,7 @@ import {Cart} from '../interfaces/cart.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class SharedService {
   baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) {
@@ -27,14 +27,14 @@ export class ProductService {
     return this.http.get<Cart>(`${this.baseUrl}/cart`, {params: {userid}});
   }
 
-  setCookie(cname, cvalue, exdays) {
+  setCookie(cname, cvalue, exdays): void {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     const expires = 'expires=' + d.toUTCString();
     document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
   }
 
-  getCookie(cname) {
+  getCookie(cname): any {
     const name = cname + '=';
     const decodedCookie = decodeURIComponent(document.cookie);
     const ca = decodedCookie.split(';');
@@ -51,5 +51,9 @@ export class ProductService {
   }
   postToCart(data: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/cart`, data);
+  }
+
+  postOrder(data: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/orders`, data);
   }
 }

@@ -1,0 +1,18 @@
+.jumbotron {
+  background-color: #F5F5DC;
+  width: fit-content;
+  display: inline-block;
+  text-align: initial;
+}
+
+.container {
+  text-align: center;
+}
+
+.jumbotron p {
+  font-size: 18px;
+}
+
+.orderData {
+  font-weight: bold;
+}

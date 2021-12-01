@@ -3,21 +3,24 @@
   <div class="jumbotron">
     <table>
       <tr>
-      <th>Artikel</th>
-      <th>Einzelpreis</th>
+        <th>Artikel</th>
+        <th>Einzelpreis</th>
       </tr>
-      <tr *ngFor="let product of products; let i = index">
+      <tr *ngFor="let product of products">
         <td>
-          <div><img class="img" [src]="'http://localhost:3000/' + product.imgpath"><p class="chart-products">{{product.title}}</p></div>
+          <div><img class="img" [src]="'http://localhost:3000/' + product.imgpath">
+            <p class="chart-products">{{product.title}}</p></div>
         </td>
-        <td>{{product.price}}</td>
+        <td>{{product.price + '€'}}</td>
       </tr>
       <tr>
         <td></td>
-        <td id="sum-price">{{totalPrice}}</td>
+        <td id="sum-price">{{totalPrice + '€'}}</td>
       </tr>
     </table>
+    <button id="checkoutButton" type="button" class="btn btn-success"
+            routerLink="/checkout" routerLinkActive="active">Zur Kasse
+    </button>
   </div>
-  <button id="checkoutButton" type="button" class="btn btn-success" routerLink="/checkout" routerLinkActive="active">Zur Kasse</button>
 </div>
 <router-outlet></router-outlet>

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {ProductService} from './services/product.service';
+import {SharedService} from './services/shared.service';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +11,11 @@ export class AppComponent implements OnInit {
   title = 'OnlineShop';
   itemNumber = 0;
 
-  constructor(private router: Router, private productService: ProductService) {}
+  constructor(private router: Router, private sharedService: SharedService) {}
 
   ngOnInit()  {
     this.router.navigate(['homepage']);
-    this.productService.getCart().subscribe((res) => {
+    this.sharedService.getCart().subscribe((res) => {
       this.itemNumber = res.length;
     });
   }

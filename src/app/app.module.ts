@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {HttpClientModule} from '@angular/common/http';
+import { OrderOverviewComponent } from './Components/order-overview/order-overview.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
     HomeComponent,
     CartSideComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    OrderOverviewComponent
   ],
   imports: [
     BrowserModule,

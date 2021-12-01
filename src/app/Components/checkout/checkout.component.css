@@ -17,3 +17,20 @@
 .example-container .mat-radio-button {
   margin: 0 12px;
 }
+.jumbotron {
+  background-color: #F5F5DC;
+  width: fit-content;
+  display: inline-block;
+  text-align: initial;
+}
+.container {
+  text-align: center;
+}
+
+.paying {
+margin-bottom: 20px;
+ }
+
+.btn {
+  float: right;
+}
