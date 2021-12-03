@@ -15,7 +15,7 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-nav-demo">
       <ul class="nav navbar-nav navbar-right">
-        <li><a id="chart-button" routerLink="/cartpage" routerLinkActive="active">Warenkorb   <i class="fas fa-shopping-cart">   {{itemNumber}}</i></a></li>
+        <li><a id="chart-button" (click)="getCartpage()">Warenkorb   <i class="fas fa-shopping-cart">   {{itemNumber}}</i></a></li>
       </ul>
     </div>
 </nav>

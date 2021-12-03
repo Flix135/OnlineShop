@@ -18,6 +18,7 @@ body {
   color: white;
   padding-right: 65px;
   font-size: 16px;
+  cursor: pointer;
 }
 .navbar-brand {
   padding-left: 50px;
