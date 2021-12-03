@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './Components/home/home.component';
-import { CartSideComponent } from './Components/cart-side/cart-side.component';
+import { CartSiteComponent } from './Components/cart-site/cart-site.component';
 import { CheckoutComponent } from './Components/checkout/checkout.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -22,7 +22,7 @@ import { OrderOverviewComponent } from './Components/order-overview/order-overvi
   declarations: [
     AppComponent,
     HomeComponent,
-    CartSideComponent,
+    CartSiteComponent,
     CheckoutComponent,
     OrderOverviewComponent
   ],

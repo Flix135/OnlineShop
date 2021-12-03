@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {SharedService} from '../../services/shared.service';
 
 @Component({
-  selector: 'app-cart-side',
-  templateUrl: './cart-side.component.html',
-  styleUrls: ['./cart-side.component.css']
+  selector: 'app-cart-site',
+  templateUrl: './cart-site.component.html',
+  styleUrls: ['./cart-site.component.css']
 })
-export class CartSideComponent implements OnInit {
+export class CartSiteComponent implements OnInit {
   products: any[];
   revisedproducts = [];
   totalPrice: string;
