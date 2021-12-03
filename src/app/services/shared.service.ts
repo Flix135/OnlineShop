@@ -49,6 +49,7 @@ export class SharedService {
     }
     return '';
   }
+
   postToCart(data: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/cart`, data);
   }

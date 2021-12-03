@@ -4,17 +4,20 @@
     <table>
       <tr>
         <th>Artikel</th>
+        <th>Anzahl</th>
         <th>Einzelpreis</th>
       </tr>
-      <tr *ngFor="let product of products">
+      <tr *ngFor="let product of revisedproducts">
         <td>
           <div><img class="img" [src]="'http://localhost:3000/' + product.imgpath">
             <p class="chart-products">{{product.title}}</p></div>
         </td>
+        <td>{{product.quantity}}</td>
         <td>{{product.price + '€'}}</td>
       </tr>
       <tr>
-        <td></td>
+        <td style="font-weight: bold">Gesamt:</td>
+        <td>{{totalQuantity}}</td>
         <td id="sum-price">{{totalPrice + '€'}}</td>
       </tr>
     </table>
