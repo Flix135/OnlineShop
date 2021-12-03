@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {SharedService} from '../../services/shared.service';
 import {Router} from '@angular/router';
+import {AppComponent} from '../../app.component';
 
 @Component({
   selector: 'app-checkout',
@@ -12,8 +13,10 @@ export class CheckoutComponent implements OnInit {
   options: FormGroup;
   hideRequiredControl = new FormControl(false);
   floatLabelControl = new FormControl('auto');
+  appComp: AppComponent;
 
-  constructor(fb: FormBuilder, private sharedService: SharedService, private router: Router  ) {
+  constructor(fb: FormBuilder, private sharedService: SharedService, private router: Router, appComponent: AppComponent) {
+    this.appComp = appComponent;
     this.options = fb.group({
       hideRequired: this.hideRequiredControl,
       floatLabel: this.floatLabelControl,
@@ -45,6 +48,7 @@ export class CheckoutComponent implements OnInit {
       return alert('Bitte alle Felder ausfüllen!');
     }
     this.sharedService.postOrder(data).subscribe((res) => {
+      this.appComp.itemNumber = 0;
       this.router.navigate(['orderOverview', {orderId: res.orderid, totalValue: res.value }]);
     });
   }
