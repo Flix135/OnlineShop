@@ -52,4 +52,11 @@ export class CartSiteComponent implements OnInit {
       this.totalQuantity = this.quantity;
     });
   }
+  deleteFromCart(product): any {
+    const userId = this.sharedService.getCookie('userid');
+    const data = {productid: product._id, userid: userId};
+    this.sharedService.deleteFromCart(data).subscribe((res) => {
+      location.reload();
+    });
+  }
 }

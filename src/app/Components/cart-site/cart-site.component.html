@@ -11,6 +11,7 @@
         <td>
           <div><img class="img" [src]="'http://localhost:3000/' + product.imgpath">
             <p class="chart-products">{{product.title}}</p></div>
+          <button type="button" class="btn-sm btn-danger delete-chart" (click)="deleteFromCart(product)"><i class="fas fa-trash fa-m"></i></button>
         </td>
         <td>{{product.quantity}}</td>
         <td>{{product.price + '€'}}</td>

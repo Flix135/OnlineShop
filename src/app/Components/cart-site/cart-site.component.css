@@ -55,3 +55,7 @@ background-color: #556B2F;
   float: right;
   margin-top: 80px;
 }
+.btn-sm.btn-danger.delete-chart {
+  float: right;
+  margin-top: 55px;
+}

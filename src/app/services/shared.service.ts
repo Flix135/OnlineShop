@@ -54,6 +54,10 @@ export class SharedService {
     return this.http.post<any>(`${this.baseUrl}/cart`, data);
   }
 
+  deleteFromCart(data: any): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/cart`, data);
+  }
+
   postOrder(data: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/orders`, data);
   }
