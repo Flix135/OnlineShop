@@ -24,9 +24,9 @@ export class HomeComponent implements OnInit {
 }
 
 addToCart(product): any {
-    const userId = this.sharedService.getCookie('userid');
-    const data = {productid: product._id, userid: userId};
-    this.sharedService.postToCart(data).subscribe((res) => {
+    // const userId = this.sharedService.getCookie('userid');
+    // const data = {productid: product._id, userid: userId};
+    this.sharedService.postToCart(product).subscribe((res) => {
       location.reload();
   });
 }
