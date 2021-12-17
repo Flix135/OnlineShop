@@ -53,10 +53,9 @@ export class CartSiteComponent implements OnInit {
     });
   }
   deleteFromCart(product): any {
-    console.log(product.productid);
-    // const userId = this.sharedService.getCookie('userid');
-    // const data = {productid: product._id, userid: userId};
-    this.sharedService.deleteFromCart(product).subscribe((res) => {
+    const userId = this.sharedService.getCookie('userid');
+    const data = {productid: product._id, userid: userId};
+    this.sharedService.deleteFromCart(data).subscribe((res) => {
       location.reload();
     });
   }

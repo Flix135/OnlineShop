@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Product} from '../interfaces/product.interface';
 import {Cart} from '../interfaces/cart.interface';
@@ -54,18 +54,8 @@ export class SharedService {
     return this.http.post<any>(`${this.baseUrl}/cart`, data);
   }
 
-  deleteFromCart(product: any): Observable<any> {
-    const userId = this.getCookie('userid');
-    const options = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-      body: {
-        userid: userId,
-        productId: product._id,
-      },
-    };
-    return this.http.delete<any>(`${this.baseUrl}/cart`, options);
+  deleteFromCart(data: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/cart`, data);
   }
 
   postOrder(data: any): Observable<any> {
