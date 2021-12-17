@@ -38,6 +38,7 @@ export class SharedService {
     const name = cname + '=';
     const decodedCookie = decodeURIComponent(document.cookie);
     const ca = decodedCookie.split(';');
+    // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < ca.length; i++) {
       let c = ca[i];
       while (c.charAt(0) === ' ') {
@@ -55,7 +56,7 @@ export class SharedService {
   }
 
   deleteFromCart(data: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/cart`, data);
+    return this.http.post<any>(`${this.baseUrl}/cartdelete`, data);
   }
 
   postOrder(data: any): Observable<any> {

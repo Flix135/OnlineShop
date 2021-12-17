@@ -36,7 +36,8 @@ export class CartSiteComponent implements OnInit {
           title: element.title,
           quantity: element.quantity ? element.quantity : 1,
           currency: '€',
-          imgpath: element.imgpath
+          imgpath: element.imgpath,
+          _id: element._id
         };
         price += Number(parseFloat(product.price).toFixed(2));
         if (previousProduct.title !== product.title) {
@@ -54,9 +55,14 @@ export class CartSiteComponent implements OnInit {
   }
   deleteFromCart(product): any {
     const userId = this.sharedService.getCookie('userid');
+    console.log(product);
     const data = {productid: product._id, userid: userId};
     this.sharedService.deleteFromCart(data).subscribe((res) => {
       location.reload();
+    }, error => {
+      if(error.status === 200){
+        location.reload();
+      }
     });
   }
 }
